@@ -10,6 +10,7 @@ writingTheApp:
   controller: Controllers
 tests:
   title: Tests
+  declarativeclient: Use Micronaut's HTTP Client and Basic Auth
 testingTheApp:
   title: Testing the Application
 runningTheApp:

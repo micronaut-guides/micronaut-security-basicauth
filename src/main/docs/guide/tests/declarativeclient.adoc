@@ -1,0 +1,23 @@
+If you want to access a secured endpoint, you can also use Micronaut's HTTP Client and supply the Basic Auth as the Authorization header value.
+
+First create a `@Client` with a method `home` which accepts an `Authorization` HTTP Header.
+
+[source,java]
+.src/test/java/example/micronaut/AppClient.java
+----
+include::{sourceDir}/src/test/java/example/micronaut/AppClient.java[]
+----
+
+Create a test which uses the previous `@Client`
+
+[source,groovy]
+.src/test/groovy/example/micronaut/BasicAuthClientSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/micronaut/BasicAuthClientSpec.groovy[]
+----
+
+<1> The AutoCleanup extension makes sure the `close()` method of an object (e.g. `EmbeddedServer`) is called each time a feature method is finished
+<2> To run the application from a unit test you can use the http://docs.micronaut.io/api/io/micronaut/runtime/server/EmbeddedServer.html[EmbeddedServer] interface
+<3> Retrieve `AppClient` bean from application context.
+<4> If the bean is found no exception is thrown
+<5> Generate Basic Auth header value and pass it as the parameter value.
