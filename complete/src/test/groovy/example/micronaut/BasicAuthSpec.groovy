@@ -36,6 +36,6 @@ class BasicAuthSpec extends Specification {
 
         then: 'the endpoint can be accessed'
         rsp.status == HttpStatus.OK
-        rsp.body() == 'sherlock' // <10>
+        rsp.body() == 'sherlock' // <8>
     }
 }
