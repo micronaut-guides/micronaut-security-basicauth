@@ -1,0 +1,6 @@
+micronaut:
+  security:
+    enabled: true # <1>
+    endpoints:
+      login:
+        enabled: true # <2>

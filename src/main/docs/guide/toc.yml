@@ -15,3 +15,5 @@ testingTheApp:
   title: Testing the Application
 runningTheApp:
   title: Running the Application
+graal:
+  title: Generating a Native Image with GraalVM
