@@ -34,9 +34,6 @@ dependencies {
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
-    testImplementation "org.junit.jupiter:junit-jupiter-api"
-    testImplementation "io.micronaut.test:micronaut-test-junit5"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 //tag::securitydependency[]
     annotationProcessor "io.micronaut:micronaut-security"
     implementation "io.micronaut:micronaut-security"
@@ -54,10 +51,7 @@ dependencies {
 test.classpath += configurations.developmentOnly
 
 mainClassName = "example.micronaut.Application"
-// use JUnit 5 platform
-test {
-    useJUnitPlatform()
-}
+
 tasks.withType(JavaCompile){
     options.encoding = "UTF-8"
     options.compilerArgs.add('-parameters')
