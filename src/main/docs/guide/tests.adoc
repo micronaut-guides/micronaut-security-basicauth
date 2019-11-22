@@ -6,7 +6,6 @@ Create a test which verifies the user authentication flow via Basic Auth.
 .src/test/groovy/example/micronaut/BasicAuthSpec.groovy
 ----
 include::{sourceDir}/src/test/groovy/example/micronaut/BasicAuthSpec.groovy[]
-}
 ----
 
 <1> The AutoCleanup extension makes sure the `close()` method of an object (e.g. `EmbeddedServer`) is called each time a feature method is finished
