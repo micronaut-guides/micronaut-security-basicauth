@@ -16,8 +16,6 @@ Create a test which uses the previous `@Client`
 include::{sourceDir}/src/test/groovy/example/micronaut/BasicAuthClientSpec.groovy[]
 ----
 
-<1> The AutoCleanup extension makes sure the `close()` method of an object (e.g. `EmbeddedServer`) is called each time a feature method is finished
-<2> To run the application from a unit test you can use the http://docs.micronaut.io/api/io/micronaut/runtime/server/EmbeddedServer.html[EmbeddedServer] interface
-<3> Retrieve `AppClient` bean from application context.
-<4> If the bean is found no exception is thrown
-<5> Generate Basic Auth header value and pass it as the parameter value.
+<1> Annotate the class with `@MicronautTest` to let Micronaut starts the embedded server and inject the beans. More info: https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html[https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html].
+<2> Inject the `AppClient` bean.
+<3> Generate Basic Auth header value and pass it as the parameter value.
