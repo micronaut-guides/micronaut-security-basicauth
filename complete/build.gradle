@@ -34,10 +34,20 @@ dependencies {
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
-//tag::securitydependency[]
+
+    //tag::securitydependency[]
     annotationProcessor "io.micronaut:micronaut-security"
     implementation "io.micronaut:micronaut-security"
-//end::securitydependency[]
+    //end::securitydependency[]
+
+    // Only required for Graal Native Image
+    //tag::micronaut-graal[]
+    annotationProcessor "io.micronaut:micronaut-graal"
+    //end::micronaut-graal[]
+    //tag::substratevm[]
+    compileOnly "com.oracle.substratevm:svm"
+    //end::substratevm[]
+
     //tag::spock[]
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation "io.micronaut:micronaut-inject-groovy"
