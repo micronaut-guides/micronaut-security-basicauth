@@ -44,9 +44,9 @@ dependencies {
     //tag::micronaut-graal[]
     annotationProcessor "io.micronaut:micronaut-graal"
     //end::micronaut-graal[]
-    //tag::substratevm[]
-    compileOnly "com.oracle.substratevm:svm"
-    //end::substratevm[]
+    //tag::svm[]
+    compileOnly "org.graalvm.nativeimage:svm:19.3.0"
+    //end::svm[]
 
     //tag::spock[]
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"

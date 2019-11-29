@@ -1,4 +1,12 @@
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
-COPY build/libs/complete-*-all.jar complete.jar
+FROM oracle/graalvm-ce:19.3.0-java8 as graalvm
+#FROM oracle/graalvm-ce:19.3.0-java11 as graalvm # For JDK 11
+COPY . /home/app/micronautguide
+WORKDIR /home/app/micronautguide
+RUN gu install native-image
+RUN yum install -y libstdc++-static
+RUN native-image --no-server --static -cp build/libs/complete-*-all.jar
+
+FROM frolvlad/alpine-glibc
 EXPOSE 8080
-CMD java -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar complete.jar
+COPY --from=graalvm /home/app/micronautguide/micronautguide /app/micronautguide
+ENTRYPOINT ["/app/micronautguide"]
