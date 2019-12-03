@@ -1,1 +1,12 @@
-include::{commondir}/common-graal.adoc[]
+include::{commondir}/common-graal-setup.adoc[]
+
+include::{commondir}/common-graal-nativeimage.adoc[]
+
+You can invoke the controller exposed by the native image:
+
+[source,bash]
+----
+curl "http://localhost:8080" -u 'sherlock:password'
+----
+
+include::{commondir}/common-graal-docker.adoc[]
