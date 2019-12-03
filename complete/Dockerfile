@@ -9,4 +9,4 @@ RUN native-image --no-server --static -cp build/libs/complete-*-all.jar
 FROM frolvlad/alpine-glibc
 EXPOSE 8080
 COPY --from=graalvm /home/app/micronautguide/micronautguide /app/micronautguide
-ENTRYPOINT ["/app/micronautguide"]
+ENTRYPOINT ["/app/micronautguide","-Xmx68m"]
