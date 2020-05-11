@@ -11,8 +11,7 @@ version "0.1"
 group "example.micronaut"
 
 repositories {
-    mavenCentral()
-    maven { url "https://jcenter.bintray.com" }
+    jcenter()
 }
 
 configurations {
