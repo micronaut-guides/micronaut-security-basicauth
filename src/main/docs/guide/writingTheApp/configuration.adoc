@@ -6,5 +6,4 @@ Create the a new `application.yml` configuration file:
 include::{sourceDir}/src/main/resources/application.yml[]
 ----
 
-<1> Enable Micronaut's security capabilities
-<2> Expose `/login` endpoint
+<1> Expose `/login` endpoint
