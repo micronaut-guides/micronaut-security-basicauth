@@ -35,8 +35,8 @@ dependencies {
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
 
     //tag::securitydependency[]
-    annotationProcessor "io.micronaut:micronaut-security"
     implementation "io.micronaut:micronaut-security"
+    annotationProcessor 'io.micronaut:micronaut-security-annotations:2.0.0.M2'
     //end::securitydependency[]
 
     // Only required for Graal Native Image
