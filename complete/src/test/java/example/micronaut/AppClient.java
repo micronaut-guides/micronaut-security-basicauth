@@ -11,5 +11,5 @@ public interface AppClient {
 
     @Consumes(MediaType.TEXT_PLAIN) // <1>
     @Get("/")
-    String home(@Header String authorization);
+    String home(@Header String authorization); // <2>
 }
