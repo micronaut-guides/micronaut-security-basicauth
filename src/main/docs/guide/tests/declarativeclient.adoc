@@ -8,6 +8,8 @@ First create a `@Client` with a method `home` which accepts an `Authorization` H
 include::{sourceDir}/src/test/java/example/micronaut/AppClient.java[]
 ----
 
+<1> The method consumes plain text, because of it Micronaut includes the HTTP Header `Accept: text/plain`.
+
 Create a test which uses the previous `@Client`
 
 [source,groovy]

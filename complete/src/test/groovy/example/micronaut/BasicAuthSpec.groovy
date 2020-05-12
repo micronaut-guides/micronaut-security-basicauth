@@ -3,6 +3,7 @@ package example.micronaut
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
+import io.micronaut.http.MediaType
 import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.http.client.exceptions.HttpClientResponseException
@@ -24,7 +25,7 @@ class BasicAuthSpec extends Specification {
 
     def "Verify HTTP Basic Auth works"() {
         when: 'Accessing a secured URL without authenticating'
-        client.toBlocking().exchange(HttpRequest.GET('/')) // <4>
+        client.toBlocking().exchange(HttpRequest.GET('/').accept(MediaType.TEXT_PLAIN)) // <4>
 
         then: 'returns unauthorized'
         HttpClientResponseException e = thrown(HttpClientResponseException) // <5>
@@ -32,6 +33,7 @@ class BasicAuthSpec extends Specification {
 
         when: 'A secured URL is accessed with Basic Auth'
         HttpRequest request = HttpRequest.GET('/')
+                .accept(MediaType.TEXT_PLAIN)
                 .basicAuth("sherlock", "password") // <6>
         HttpResponse<String> rsp = client.toBlocking().exchange(request, String) // <7>
 
