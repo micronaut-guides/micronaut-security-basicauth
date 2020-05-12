@@ -36,6 +36,7 @@ class BasicAuthSpec extends Specification {
         HttpResponse<String> rsp = client.toBlocking().exchange(request, String) // <7>
 
         then: 'the endpoint can be accessed'
+        noExceptionThrown()
         rsp.status == HttpStatus.OK
         rsp.body() == 'sherlock' // <8>
     }
