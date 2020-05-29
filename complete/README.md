@@ -1,3 +1,8 @@
-# Micronaut Basic Auth #
+## Feature http-client documentation
 
-The guide is available at http://guides.micronaut.io/micronaut-security-basicauth/guide/index.html
+- [Micronaut Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+
+## Feature security documentation
+
+- [Micronaut Micronaut Security documentation](https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html)
+
