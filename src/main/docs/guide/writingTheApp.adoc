@@ -15,6 +15,4 @@ You can create the app using https://micronaut.com/launch[Micronaut Launch]
 
 image::micronautlaunch.png[]
 
-include::{commondir}/common-create-app-java.adoc[]
-
 include::{commondir}/common-annotationprocessors.adoc[]
