@@ -21,9 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class BasicAuthTest {
 
     @Inject
-    EmbeddedServer embeddedServer;
-
-    @Inject
     @Client("/")
     RxHttpClient client; // <2>
 
