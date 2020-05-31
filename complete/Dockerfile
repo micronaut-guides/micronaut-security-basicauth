@@ -1,13 +1,4 @@
-FROM oracle/graalvm-ce:20.1.0-java11 as graalvm
-RUN gu install native-image
-
-COPY . /home/app/complete
-WORKDIR /home/app/complete
-
-RUN native-image --no-server -cp build/libs/complete-*-all.jar
-
-FROM frolvlad/alpine-glibc
-RUN apk update && apk add libstdc++
+FROM openjdk:14-alpine
+COPY build/libs/complete-*-all.jar complete.jar
 EXPOSE 8080
-COPY --from=graalvm /home/app/complete/micronautguide /app/complete
-ENTRYPOINT ["/app/complete"]
+CMD ["java", "-Dcom.sun.management.jmxremote", "-Xmx128m", "-jar", "complete.jar"]

@@ -3,9 +3,9 @@ If you want to access a secured endpoint, you can also use Micronaut's HTTP Clie
 First create a `@Client` with a method `home` which accepts an `Authorization` HTTP Header.
 
 [source,java]
-.src/test/groovy/example/micronaut/AppClient.groovy
+.src/test/java/example/micronaut/AppClient.java
 ----
-include::{sourceDir}/src/test/groovy/example/micronaut/AppClient.groovy[]
+include::{sourceDir}/src/test/java/example/micronaut/AppClient.java[]
 ----
 
 <1> The method consumes plain text, because of it Micronaut includes the HTTP Header `Accept: text/plain`.
@@ -14,9 +14,9 @@ include::{sourceDir}/src/test/groovy/example/micronaut/AppClient.groovy[]
 Create a test which uses the previous `@Client`
 
 [source,groovy]
-.src/test/groovy/example/micronaut/BasicAuthClientSpec.groovy
+.src/test/java/example/micronaut/BasicAuthClientTest.java
 ----
-include::{sourceDir}/src/test/groovy/example/micronaut/BasicAuthClientSpec.groovy[]
+include::{sourceDir}/src/test/java/example/micronaut/BasicAuthClientTest.java[]
 ----
 
 <1> Annotate the class with `@MicronautTest` to let Micronaut starts the embedded server and inject the beans. More info: https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html[https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html].

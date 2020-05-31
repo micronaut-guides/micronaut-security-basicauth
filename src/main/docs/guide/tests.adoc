@@ -1,9 +1,9 @@
 Create a test which verifies the user authentication flow via Basic Auth.
 
 [source,groovy]
-.src/test/groovy/example/micronaut/BasicAuthSpec.groovy
+.src/test/java/example/micronaut/BasicAuthTest.java
 ----
-include::{sourceDir}/src/test/groovy/example/micronaut/BasicAuthSpec.groovy[]
+include::{sourceDir}/src/test/java/example/micronaut/BasicAuthTest.java[]
 ----
 
 <1> Annotate the class with `@MicronautTest` to let Micronaut starts the embedded server and inject the beans. More info: https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html[https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html].
