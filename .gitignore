@@ -6,3 +6,4 @@ build
 complete/out
 completegraal/out
 /complete/micronautguide
+.DS_Store
