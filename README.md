@@ -1,4 +1,1 @@
-# Micronaut Basic Auth #
-
-Guide: http://guides.micronaut.io/micronaut-security-basicauth/guide/index.html
-
+# This guide has been deprecated and moved to https://github.com/micronaut-projects/micronaut-guides-poc. Please open any issue or pull request in that repository.
